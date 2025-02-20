@@ -13,7 +13,7 @@
 					<img src="images/Wanderlust-logo.png" alt="Wanderlust Logo" height="300" width="300">
 					<nav>
 						<ul>
-							<li><a href="i../index.html">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="travel.html">Travel</a></li>
 							<li><a href="news.html">News</a></li>
 							<li><a href="about.html">About</a></li>
@@ -26,91 +26,93 @@
 					</div>
 				</div>
 			</header>
-            <div id="booking">
-                <h2>Book Your Trip</h2>
-                <div class="booking-container">
-                    <form action="/submit_booking" method="post">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" required>
-
-                        <label for="destination">Destination:</label>
-                        <input type="text" id="destination" name="destination" required readonly>
-
-                        <label for="start-date">Start Date:</label>
-                        <input type="date" id="start-date" name="start-date" required>
-
-                        <label for="end-date">End Date:</label>
-                        <input type="date" id="end-date" name="end-date" required>
-
-                        <label for="comments">Additional Comments:</label>
-                        <textarea id="comments" name="comments"></textarea>
-
-                        <h3>Select Your Room</h3>
-                        <div class="room-options">
-                            <div class="room-option">
-                                <input type="radio" id="room1" name="room" value="Suite" required>
-                                <label for="room1">
-                                    <img src="images/suite.jpg" alt="Suite" height="200" width="300">
-                                    <p>Suite - Proin rhoncus ante in felis fermentum tempus.</p>
-                                </label>
+            <main>
+                <section id="booking">
+                    <h2>Book Your Trip</h2>
+                    <div class="booking-container">
+                        <form action="/submit_booking" method="post">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+    
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+    
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required>
+    
+                            <label for="destination">Destination:</label>
+                            <input type="text" id="destination" name="destination" required readonly>
+    
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" id="start-date" name="start-date" required>
+    
+                            <label for="end-date">End Date:</label>
+                            <input type="date" id="end-date" name="end-date" required>
+    
+                            <label for="comments">Additional Comments:</label>
+                            <textarea id="comments" name="comments"></textarea>
+    
+                            <h3>Select Your Room</h3>
+                            <div class="room-options">
+                                <div class="room-option">
+                                    <input type="radio" id="room1" name="room" value="Suite" required>
+                                    <label for="room1">
+                                        <img src="images/suite.jpg" alt="Suite" height="200" width="300">
+                                        <p>Suite - Proin rhoncus ante in felis fermentum tempus.</p>
+                                    </label>
+                                </div>
+                                <div class="room-option">
+                                    <input type="radio" id="room2" name="room" value="Deluxe Room" required>
+                                    <label for="room2">
+                                        <img src="images/first-class.jpg" alt="Deluxe Room" height="200" width="300">
+                                        <p>Deluxe Room - Duis id felis vulputate, dictum erat vel, ullamcorper magna.</p>
+                                    </label>
+                                </div>
+                                <div class="room-option">
+                                    <input type="radio" id="room3" name="room" value="Standard Room" required>
+                                    <label for="room3">
+                                        <img src="images/deluxe.jpg" alt="Standard Room" height="200" width="300">
+                                        <p>Standard Room - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="room-option">
-                                <input type="radio" id="room2" name="room" value="Deluxe Room" required>
-                                <label for="room2">
-                                    <img src="images/first-class.jpg" alt="Deluxe Room" height="200" width="300">
-                                    <p>Deluxe Room - Duis id felis vulputate, dictum erat vel, ullamcorper magna.</p>
-                                </label>
+    
+                            <h3>Select Your Food Package</h3>
+                            <div class="food-options">
+                                <div class="food-option">
+                                    <input type="radio" id="food1" name="food" value="All-Inclusive" required>
+                                    <label for="food1">
+                                        <img src="images/All-Inclusive.jpg" alt="All-Inclusive" height="200" width="300">
+                                        <p>All-Inclusive - Includes all meals, snacks, and drinks.</p>
+                                    </label>
+                                </div>
+                                <div class="food-option">
+                                    <input type="radio" id="food2" name="food" value="Half-Board" required>
+                                    <label for="food2">
+                                        <img src="images/Half-Board.jpg" alt="Half-Board" height="200" width="300">
+                                        <p>Half-Board - Includes breakfast and dinner.</p>
+                                    </label>
+                                </div>
+                                <div class="food-option">
+                                    <input type="radio" id="food3" name="food" value="Breakfast Only" required>
+                                    <label for="food3">
+                                        <img src="images/Breakfast.jpg" alt="Breakfast Only" height="200" width="300">
+                                        <p>Breakfast Only - Includes breakfast only.</p>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="room-option">
-                                <input type="radio" id="room3" name="room" value="Standard Room" required>
-                                <label for="room3">
-                                    <img src="images/deluxe.jpg" alt="Standard Room" height="200" width="300">
-                                    <p>Standard Room - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </label>
-                            </div>
-                        </div>
-
-                        <h3>Select Your Food Package</h3>
-                        <div class="food-options">
-                            <div class="food-option">
-                                <input type="radio" id="food1" name="food" value="All-Inclusive" required>
-                                <label for="food1">
-                                    <img src="images/All-Inclusive.jpg" alt="All-Inclusive" height="200" width="300">
-                                    <p>All-Inclusive - Includes all meals, snacks, and drinks.</p>
-                                </label>
-                            </div>
-                            <div class="food-option">
-                                <input type="radio" id="food2" name="food" value="Half-Board" required>
-                                <label for="food2">
-                                    <img src="images/Half-Board.jpg" alt="Half-Board" height="200" width="300">
-                                    <p>Half-Board - Includes breakfast and dinner.</p>
-                                </label>
-                            </div>
-                            <div class="food-option">
-                                <input type="radio" id="food3" name="food" value="Breakfast Only" required>
-                                <label for="food3">
-                                    <img src="images/Breakfast.jpg" alt="Breakfast Only" height="200" width="300">
-                                    <p>Breakfast Only - Includes breakfast only.</p>
-                                </label>
-                            </div>
-                        </div>
-
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
-            </div>
+    
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </section>
+            </main>
             <footer>
                 <div class="footer-container">
                     <h3>Wanderlust</h3>
                     <nav>
                         <ul>
-                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="index.html">Home</a></li>
                             <li><a href="travel.html">Travel</a></li>
                             <li><a href="news.html">News</a></li>
                             <li><a href="about.html">About</a></li>
