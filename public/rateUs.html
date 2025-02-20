@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Wanderlust Travel Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            <header>
+                <div class="container">
+                    <img src="images/Wanderlust-logo.png" alt="Wanderlust Logo" height="300" width="300">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="travel.html">Travel</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="button-container">
+                        <a href="login.html"><button class="button-primary">Login</button></a>
+						<a href="sign-up.html"><button class="button-secondary">Sign Up</button></a>
+                    </div>
+                </div>
+            </header>
+            <div id="rate">
+                <h2>Rate Us</h2>
+                <div class="rate-us-container">
+                    <form action="/submit_rating" method="post">
+                        <table>
+                            <tr>
+                                <td><label for="name">Name:</label></td>
+                                <td><input type="text" id="name" name="name"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="rating">Rating:</label></td>
+                                <td>
+                                    <div class="star-rating">
+                                        <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">&#9733;</label>
+                                        <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">&#9733;</label>
+                                        <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">&#9733;</label>
+                                        <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">&#9733;</label>
+                                        <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">&#9733;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="comments">Comments:</label></td>
+                                <td><textarea id="comments" name="comments"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="submit" value="Submit"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-container">
+                    <h3>Wanderlust</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="travel.html">Travel</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div id="connect">
+                        <a href="http://pinterest.com" target="_blank" class="pinterest">
+                            <img src="./images/pinterest_icon.png" alt="Pinterest Icon" height="28" width="28">
+                        </a> 
+                        <a href="http://www.facebook.com/" target="_blank" class="facebook">
+                            <img src="./images/facebook_icon.png" alt="Facebook Icon" height="25" width="25">
+                        </a> 
+                        <a href="http://x.com/?mx=2" target="_blank" class="X">
+                            <img src="./images/X_icon.png" alt="X Icon" height="25" width="25">
+                        </a> 
+                        <a href="http://www.google.com/" target="_blank" class="googleplus">
+                            <img src="./images/google plus_icon.png" alt="Google Plus Icon" height="28" width="28">
+                        </a>
+                    </div>
+                </div>
+                <p>
+                    © 2025 by Wanderlust Travel Agency. All Rights Reserved
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

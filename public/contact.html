@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Wanderlust Travel Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            <header>
+                <div class="container">
+                    <img src="images/Wanderlust-logo.png" alt="Wanderlust Logo" height="300" width="300">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="travel.html">Travel</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="button-container">
+                        <a href="login.html"><button class="button-primary">Login</button></a>
+						<a href="sign-up.html"><button class="button-secondary">Sign Up</button></a>
+                    </div>
+                </div>
+            </header>
+            <div id="contact">
+                <div class="contact-flex-container">
+                    <div class="contact-container">
+                        <form action="/submit_contact" method="post">
+                            <h2>Contact Us by Email</h2>
+                            <hr>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Name:</td>
+                                        <td><input type="text" name="name" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td><input type="email" name="email" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subject:</td>
+                                        <td><input type="text" name="subject" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Message:</td>
+                                        <td><textarea name="message" required></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: center;">
+                                            <input type="submit" class="btn" value="Send">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><span>We will get back to you within 24 hours.</span></p>
+                        </form>
+                    </div>
+                    <div class="contact-info-container">
+                        <h2>Contact Us by Phone or Mail</h2>
+                        <hr>
+                        <p>
+                            <span>Address:</span> 123 Lorem Ipsum Cove, Sed Ut City, LI 12345
+                        </p>
+                        <p>
+                            <span>Telephone Number:</span> 1-800-999-9999
+                        </p>
+                        <p>
+                            <span>Fax Number:</span> 1-800-111-1111
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-container">
+                    <h3>Wanderlust</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="travel.html">Travel</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div id="connect">
+                        <a href="http://pinterest.com" target="_blank" class="pinterest">
+                            <img src="./images/pinterest_icon.png" alt="Pinterest Icon" height="28" width="28">
+                        </a> 
+                        <a href="http://www.facebook.com/" target="_blank" class="facebook">
+                            <img src="./images/facebook_icon.png" alt="Facebook Icon" height="25" width="25">
+                        </a> 
+                        <a href="http://x.com/?mx=2" target="_blank" class="X">
+                            <img src="./images/X_icon.png" alt="X Icon" height="25" width="25">
+                        </a> 
+                        <a href="http://www.google.com/" target="_blank" class="googleplus">
+                            <img src="./images/google plus_icon.png" alt="Google Plus Icon" height="28" width="28">
+                        </a>
+                    </div>
+                </div>
+                <p>
+                    © 2025 by Wanderlust Travel Agency. All Rights Reserved
+                </p>
+            </footer>
+        </div>
+    </div>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
