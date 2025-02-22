@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Wanderlust Travel Agency</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			{{> header }}
+			<main>
+				<section id="news">
+					<div class="box">
+						<div class="sidebar">
+							<h3>Latest News</h3>
+							<ul>
+								{{#each newsData.latestNews}}
+								<li><a href="/news">{{this}}</a></li>
+								{{/each}}
+							</ul>
+							<h3>Vacation Tips</h3>
+							<ul>
+								{{#each newsData.vacationTips}}
+								<li><a href="/news">{{this}}</a></li>
+								{{/each}}
+							</ul>
+							<h3>Popular Destinations</h3>
+							<ul>
+								{{#each newsData.popularDestinations}}
+								<li><a href="/news">{{this}}</a></li>
+								{{/each}}
+							</ul>
+							<h3>Weather Forecast</h3>
+							<ul>
+								{{#each newsData.weatherLocations}}
+                                <li id="{{this.id}}" class="weather-item">{{this.name}}: Loading...</li>
+                                {{/each}}
+							</ul>
+						</div>
+						<div class="content">
+							<h1>News</h1>
+							{{#each newsData.newsArticles}}
+                            <img src="{{this.image}}" alt="{{this.alt}}">
+                            <h2>{{this.title}}</h2>
+                            <span class="time">{{this.date}}<br> by: {{this.author}}</span>
+                            {{#each this.content}}
+                            <p>{{this}}</p>
+                            {{/each}}
+                            {{/each}}
+						</div>
+					</div>
+				</section>
+			</main>
+			{{> footer }}
+		</div>
+	</div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

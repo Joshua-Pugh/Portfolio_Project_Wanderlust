@@ -1,0 +1,9 @@
+{
+    "address": "123 Lorem Ipsum Cove, Sed Ut City, LI 12345",
+    "telephone_number" : "1-800-999-9999",
+    "business_hours": {
+        "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+        "saturday": "Saturday: 10:00 AM - 4:00 PM",
+        "sunday": "Sunday: Closed"
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking - Wanderlust Travel Agency</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            {{> header }}
+            <main>
+                <section id="booking">
+                    <h2>Book Your Trip</h2>
+                    <div class="booking-container">
+                        <form action="/submit_booking" method="post">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+    
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+    
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required>
+    
+                            <label for="destination">Destination:</label>
+                            <input type="text" id="destination" name="destination" required readonly>
+    
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" id="start-date" name="start-date" required>
+    
+                            <label for="end-date">End Date:</label>
+                            <input type="date" id="end-date" name="end-date" required>
+    
+                            <label for="comments">Additional Comments:</label>
+                            <textarea id="comments" name="comments"></textarea>
+    
+                            <h3>Select Your Room</h3>
+                            <div class="room-options">
+                                {{#each roomOptions}}
+                                <div class="room-option">
+                                    <input type="radio" id="{{this.id}}" name="room" value="{{this.name}}" required>
+                                    <label for="{{this.id}}">
+                                        <img src="{{this.image}}" alt="Suite" height="200" width="300">
+                                        <p>{{this.name}} - {{this.description}}.</p>
+                                    </label>
+                                </div>
+                                {{/each}}
+                            </div>
+
+                            <h3>Select Your Food Package</h3>
+                            <div class="food-options">
+                                {{#each foodOptions}}
+                                <div class="food-option">
+                                    <input type="radio" id="{{this.id}}" name="food" value="{{this.name}}" required>
+                                    <label for="{{this.id}}">
+                                        <img src="{{this.image}}" alt="{{this.alt}}" height="200" width="300">
+                                        <p>{{this.name}} - {{this.description}}.</p>
+                                    </label>
+                                </div>
+                                {{/each}}
+                            </div>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </section>
+            </main>
+            {{> footer }}
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

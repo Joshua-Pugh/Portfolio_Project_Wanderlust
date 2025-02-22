@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Wanderlust Travel Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            {{> header }}
+            <main>
+                <section id="about">
+                    <div class="about-box">
+                        <h1>About Us</h1>
+                        <hr>
+                        <h2>Discover the World with Wanderlust</h2>
+                        <p>{{aboutContent.introduction}}</p>
+                        <p>{{aboutContent.history}}</p>
+                        <hr>
+                        <h2>Our Services</h2>
+                        <p>{{aboutContent.services}}</p>
+                        <h2>Why Choose Us?</h2>
+                        <ul>
+                            {{#each aboutContent.whyChooseUs}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                        <hr>
+                        <h2>Join Our Community</h2>
+                        <p>{{aboutContent.community}}</p>
+                    </div>
+                </section>
+            </main>
+            {{> footer }}
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

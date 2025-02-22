@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Wanderlust Travel Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            {{> header }}
+            <main>
+                <section id="sign-up">
+                    <h2>Sign Up</h2>
+                    <div class="sign-up-container">
+                        <form action="/sign-up" method="post">
+                            <table>
+                                <tr>
+                                    <td><label for="username">Username:</label></td>
+                                    <td><input type="text" id="username" name="username" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="password">Password:</label></td>
+                                    <td><input type="password" id="password" name="password" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="email">Email:</label></td>
+                                    <td><input type="email" id="email" name="email" required></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="submit" value="Sign Up"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </section>
+            </main>
+            {{> footer }}
+        </div>
+    </div>
+</body>
+</html>

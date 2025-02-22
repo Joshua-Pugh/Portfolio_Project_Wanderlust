@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Juan De La Cruz",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a vestibulum odio. Curabitur lobortis sem sed augue accumsan feugiat. Morbi pharetra dui quis libero maximus malesuada sit amet in arcu. Mauris lacinia imperdiet leo, vitae molestie ipsum blandit quis. Sed velit eros, molestie non urna et, euismod scelerisque dolor.",
+        "rating": 5
+    },
+    {
+        "name": "Jane Doe",
+        "text": "Nunc magna diam, egestas vitae orci ut, fermentum tempus massa. Pellentesque dictum tincidunt diam, sit amet congue tortor porta placerat. Praesent mauris arcu, consectetur et euismod vitae, consequat eleifend risus. Donec bibendum faucibus metus facilisis posuere.",
+        "rating": 4
+    },
+    {
+        "name": "John Smith",
+        "text": "Donec dapibus blandit diam, sit amet mollis magna molestie vel. Aenean sagittis eget est ut blandit. Praesent eu magna ut justo blandit commodo. Aenean pretium sapien eu orci dignissim, eu cursus lacus pulvinar. Phasellus feugiat vulputate orci, at congue ante efficitur a. Sed aliquam justo purus, bibendum venenatis dolor consectetur in. Praesent mollis aliquet ligula sit amet laoreet.",
+        "rating": 3
+    }
+]

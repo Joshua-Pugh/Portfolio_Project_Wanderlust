@@ -1,0 +1,23 @@
+[
+    {
+        "id": "room1",
+        "name": "Suite",
+        "image": "images/suite.jpg",
+        "alt": "Suite",
+        "description": "Proin rhoncus ante in felis fermentum tempus."
+    },
+    {
+        "id": "room2",
+        "name": "Deluxe Room",
+        "image": "images/first-class.jpg",
+        "alt": "Deluxe Room",
+        "description": "Duis id felis vulputate, dictum erat vel, ullamcorper magna."
+    },
+    {
+        "id": "room3",
+        "name": "Standard Room",
+        "image": "images/deluxe.jpg",
+        "alt": "Standard Room",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+]

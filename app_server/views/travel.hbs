@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Travel Page</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			{{> header }}
+			<main>
+				<section id="travel">
+					<div class="body">
+						<h1>Travel</h1>
+						<hr/>
+						<div class="card-container" >
+							{{#each trips}}
+							<div class="card">
+								<h2>{{this.name}}</h2>
+								<img src="{{this.image}}" alt="{{this.alt}}" height="300" width="300">
+								<p>{{this.description}}</p>
+								<a href="/booking?destination={{this.name}}" class="button-primary">Book Now</a>        
+							</div>
+							{{/each}}
+						</div>
+					</div>
+				</section>
+			</main>
+			{{> footer }}
+		</div>
+	</div>
+	<script src="js/scripts.js"></script>
+</body>
+</html>

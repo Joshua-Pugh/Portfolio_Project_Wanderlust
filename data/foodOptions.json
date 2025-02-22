@@ -1,0 +1,23 @@
+[
+    {
+        "id": "food1",
+        "name": "All-Inclusive",
+        "image": "images/All-Inclusive.jpg",
+        "alt": "All-Inclusive",
+        "description": "Includes all meals, snacks, and drinks."
+    },
+    {
+        "id": "food2",
+        "name": "Half-Board",
+        "image": "images/Half-Board.jpg",
+        "alt": "Half-Board",
+        "description": "Includes breakfast and dinner."
+    },
+    {
+        "id": "food3",
+        "name": "Breakfast Only",
+        "image": "images/Breakfast.jpg",
+        "alt": "Breakfast Only",
+        "description": "Includes breakfast only."
+    }
+]

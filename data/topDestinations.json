@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Paris",
+        "image": "images/Paris.jpg", 
+        "alt": "Paris"  
+    },
+
+    {
+        "name": "Rome",
+        "image": "images/Rome.jpg", 
+        "alt": "Rome"  
+    },
+
+    {
+        "name": "Bora Bora",
+        "image": "images/Bora-Bora.jpg", 
+        "alt": "Bora Bora"  
+    },
+
+    {
+        "name": "Hawaii",
+        "image": "images/Hawaii.jpg", 
+        "alt": "Hawaii"  
+    }
+]

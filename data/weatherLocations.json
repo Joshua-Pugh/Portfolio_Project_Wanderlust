@@ -1,0 +1,10 @@
+{
+    "locations": [
+        { "name": "Maldives", "id": "weather-maldives" },
+        { "name": "Bora Bora", "id": "weather-borabora" },
+        { "name": "Hawaii", "id": "weather-hawaii" },
+        { "name": "Bahamas", "id": "weather-bahamas" },
+        { "name": "Fiji", "id": "weather-fiji" },
+        { "name": "Santorini", "id": "weather-santorini" }
+    ]
+}

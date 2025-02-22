@@ -59,3 +59,6 @@ typings/
 
 # next.js build output
 .next
+
+# Ignore the config.js file containing the API key
+/public/js/config.js

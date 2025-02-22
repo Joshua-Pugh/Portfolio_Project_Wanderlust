@@ -1,5 +1,5 @@
 /*
- * This script manages the slideshow, testimonial display functionality, active link highlighting, and weather data fetching for the Wanderlust Travel website.
+ * This script manages the slideshow, testimonial display functionality, active link highlighting, weather data fetching, and star rating generation for the Wanderlust Travel website.
  * 
  * Functions:
  * - showSlides: Automatically cycles through the slideshow images, displaying each image for 5 seconds.
@@ -8,11 +8,15 @@
  * - showTestimonials: Automatically cycles through the testimonials, displaying each testimonial for 5 seconds.
  * - Highlight active link: Highlights the active navigation link based on the current URL.
  * - Fetch and display weather data: Fetches weather data from the Open-Meteo API and displays it in the sidebar.
+ * - Generate Star Ratings: Generates star ratings for testimonials based on the rating value.
  * 
  * The script uses the 'mySlides' class for slideshow images and the 'dot' class for navigation dots.
  * The 'testimonial-slide' class is used for testimonials.
+ * The 'star-rating' class is used for star ratings.
  */
 
+
+/* Home Page */
 let slideIndex = 0;
 
 showSlides();
@@ -82,100 +86,166 @@ function showTestimonials() {
 	setTimeout(showTestimonials, 5000); // Change testimonial every 5 seconds
 }
 
+/* Generate Star Ratings */
+document.addEventListener('DOMContentLoaded', function() {
+    const starRatings = document.querySelectorAll('.star-rating');
+
+    if (starRatings.length === 0) {
+        console.log("No star ratings to generate.");
+        return;
+    }
+
+    starRatings.forEach(starRating => {
+        const rating = parseFloat(starRating.getAttribute('data-rating'));
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement('span');
+            star.classList.add('fa', 'fa-star');
+            if (i <= rating) {
+                star.classList.add('checked');
+            }
+            starRating.appendChild(star);
+        }
+    });
+});
+
+/* Header / Footer */
 /**
 * Highlights the active navigation link based on the current URL.
 */
 document.addEventListener('DOMContentLoaded', function() {
-	var currentPath = window.location.pathname.split('/').pop();
-	if (currentPath === "") {
-		currentPath = "index.html"; // Default to index.html if currentPath is empty
-	}
-	console.log("Current Path:", currentPath);
+    var currentPath = window.location.pathname;
+    if (currentPath === "") {
+        currentPath = "/"; // Default to index if currentPath is empty
+    }
+    console.log("Current Path:", currentPath);
 
-	var navLinks = document.querySelectorAll("nav ul li a");
+    var navLinks = document.querySelectorAll("nav ul li a");
 
-	navLinks.forEach(function(link) {
-		console.log("Checking link:", link.getAttribute('href'));
-		if (link.getAttribute('href') === currentPath) {
-			link.parentElement.classList.add("active");
-			console.log("Active link found:", link.getAttribute('href'));
-		}
-	});
+    navLinks.forEach(function(link) {
+        console.log("Checking link:", link.getAttribute('href'));
+        if (link.getAttribute('href') === currentPath) {
+            link.parentElement.classList.add("active");
+            console.log("Active link found:", link.getAttribute('href'));
+        }
+    });
 });
 
+/* News Page */
 /**
  * Fetches weather data from the Open-Meteo API and displays it in the News sidebar.
  */
 document.addEventListener('DOMContentLoaded', function() {
-    const locations = [
-        { name: 'Maldives', lat: 3.2028, lon: 73.2207, id: 'weather-maldives' },
-        { name: 'Bora Bora', lat: -16.5004, lon: -151.7415, id: 'weather-borabora' },
-        { name: 'Hawaii', lat: 19.8968, lon: -155.5828, id: 'weather-hawaii' },
-        { name: 'Bahamas', lat: 25.0343, lon: -77.3963, id: 'weather-bahamas' },
-        { name: 'Fiji', lat: -17.7134, lon: 178.0650, id: 'weather-fiji' },
-        { name: 'Santorini', lat: 36.3932, lon: 25.4615, id: 'weather-santorini' }
-    ];
+    // Load the configuration file
+    const script = document.createElement('script');
+    // For testing purposes, the config file is loaded from the public folder
+    script.src = 'js/config.js';
+    script.onload = function() {
+        // Only for development
+        const apiKey = config.apiKey;
 
-	if (locations.length === 0) {
-		console.log("No locations found.");
-		return;
-	}
+        const weatherLocations = [
+            { name: "Maldives", id: "weather-maldives" },
+            { name: "Bora Bora", id: "weather-borabora" },
+            { name: "Hawaii", id: "weather-hawaii" },
+            { name: "Bahamas", id: "weather-bahamas" },
+            { name: "Fiji", id: "weather-fiji" },
+            { name: "Santorini", id: "weather-santorini" }
+        ];
 
-    const weatherCodeMapping = {
-        0: 'Clear sky',
-        1: 'Mainly clear',
-        2: 'Partly cloudy',
-        3: 'Overcast',
-        45: 'Fog',
-        48: 'Depositing rime fog',
-        51: 'Drizzle: Light',
-        53: 'Drizzle: Moderate',
-        55: 'Drizzle: Dense intensity',
-        56: 'Freezing Drizzle: Light',
-        57: 'Freezing Drizzle: Dense intensity',
-        61: 'Rain: Slight',
-        63: 'Rain: Moderate',
-        65: 'Rain: Heavy intensity',
-        66: 'Freezing Rain: Light',
-        67: 'Freezing Rain: Heavy intensity',
-        71: 'Snow fall: Slight',
-        73: 'Snow fall: Moderate',
-        75: 'Snow fall: Heavy intensity',
-        77: 'Snow grains',
-        80: 'Rain showers: Slight',
-        81: 'Rain showers: Moderate',
-        82: 'Rain showers: Violent',
-        85: 'Snow showers: Slight',
-        86: 'Snow showers: Heavy',
-        95: 'Thunderstorm: Slight or moderate',
-        96: 'Thunderstorm with slight hail',
-        99: 'Thunderstorm with heavy hail'
+        if (weatherLocations.length === 0) {
+            console.log("No locations found.");
+            return;
+        }
+
+        const weatherCodeMapping = {
+            0: 'Clear sky',
+            1: 'Mainly clear',
+            2: 'Partly cloudy',
+            3: 'Overcast',
+            45: 'Fog',
+            48: 'Depositing rime fog',
+            51: 'Drizzle: Light',
+            53: 'Drizzle: Moderate',
+            55: 'Drizzle: Dense intensity',
+            56: 'Freezing Drizzle: Light',
+            57: 'Freezing Drizzle: Dense intensity',
+            61: 'Rain: Slight',
+            63: 'Rain: Moderate',
+            65: 'Rain: Heavy intensity',
+            66: 'Freezing Rain: Light',
+            67: 'Freezing Rain: Heavy intensity',
+            71: 'Snow fall: Slight',
+            73: 'Snow fall: Moderate',
+            75: 'Snow fall: Heavy intensity',
+            77: 'Snow grains',
+            80: 'Rain showers: Slight',
+            81: 'Rain showers: Moderate',
+            82: 'Rain showers: Violent',
+            85: 'Snow showers: Slight',
+            86: 'Snow showers: Heavy',
+            95: 'Thunderstorm: Slight or moderate',
+            96: 'Thunderstorm with slight hail',
+            99: 'Thunderstorm with heavy hail'
+        };
+
+        weatherLocations.forEach(location => {
+            fetch(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(location.name)}&key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results.length === 0) {
+                        console.log(`No coordinates found for ${location.name}`);
+                        return;
+                    }
+
+                    const { lat, lng } = data.results[0].geometry;
+
+                    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current_weather=true`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const weatherElement = document.getElementById(location.id);
+                            if (!weatherElement) {
+                                console.log("No locations found to display weather data.");
+                                return;
+                            }
+                            if (!data || !data.current_weather) {
+                                weatherElement.innerHTML = `${location.name}: Weather data not available`;
+                                return;
+                            }
+                            const weather = data.current_weather;
+                            const weatherDescription = weatherCodeMapping[weather.weathercode] || 'Unknown weather';
+                            const temperatureF = (weather.temperature * 9/5) + 32; // Convert Celsius to Fahrenheit
+                            weatherElement.innerHTML = `${location.name}: ${temperatureF.toFixed(1)}°F, ${weatherDescription}`;
+                        })
+                        .catch(error => {
+                            const weatherElement = document.getElementById(location.id);
+                            if (weatherElement) {
+                                weatherElement.innerHTML = `${location.name}: Weather data not available`;
+                            }
+                            console.error('Error fetching weather data:', error);
+                        });
+                })
+                .catch(error => {
+                    console.error('Error fetching coordinates:', error);
+                });
+        });
     };
+    document.head.appendChild(script);
+});
 
-    locations.forEach(location => {
-        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`)
-            .then(response => response.json())
-            .then(data => {
-                const weatherElement = document.getElementById(location.id);
-                if (!weatherElement) {
-                    console.log("No locations found to display weather data.");
-                    return;
-                }
-                if (!data || !data.current_weather) {
-                    weatherElement.innerHTML = `${location.name}: Weather data not available`;
-                    return;
-                }
-                const weather = data.current_weather;
-                const weatherDescription = weatherCodeMapping[weather.weathercode] || 'Unknown weather';
-                const temperatureF = (weather.temperature * 9/5) + 32; // Convert Celsius to Fahrenheit
-                weatherElement.innerHTML = `${location.name}: ${temperatureF.toFixed(1)}°F, ${weatherDescription}`;
-            })
-            .catch(error => {
-                const weatherElement = document.getElementById(location.id);
-                if (weatherElement) {
-                    weatherElement.innerHTML = `${location.name}: Weather data not available`;
-                }
-                console.error('Error fetching weather data:', error);
-            });
-    });
+/* Booking page */
+// Function to get URL parameters
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    console.log(results);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+// Set the destination input field based on URL parameter
+document.addEventListener('DOMContentLoaded', function() {
+    var destination = getUrlParameter('destination');
+    if (destination) {
+        document.getElementById('destination').value = destination;
+    }
 });
